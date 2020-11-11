@@ -12,7 +12,7 @@ import javafx.util.Duration;
 import javafx.scene.control.*;
 import javafx.event.ActionEvent;
 
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -45,6 +45,8 @@ public class signUpController implements Initializable {
 
     @FXML
     public String signupAction(ActionEvent e) throws IOException {
+        File list = new File("list.txt");
+        FileWriter writer = new FileWriter(list, true);
         if(username != null && password != null){
             username.setStyle("-fx-background-color: red;");
             password.setStyle("-fx-background-color : orange;");
@@ -58,6 +60,26 @@ public class signUpController implements Initializable {
 
             Stage signUp = new Stage();
             Parent root = null;
+            try {
+                writer.write(username.getText() + " " + password.getText() + " " + mail.getText() + " " + location
+                        .getText()+ "\n");
+                writer.flush();
+                writer.close();
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
+            }
+            try (BufferedReader br = new BufferedReader(new FileReader(list))) {
+                String line;
+                while ((line = br.readLine()) != null) {
+                    System.out.println(line);
+                }
+            }
+            catch (FileNotFoundException fileNotFoundException) {
+                fileNotFoundException.printStackTrace();
+            }
+            catch (IOException ioException) {
+                ioException.printStackTrace();
+            }
             try {
                 root = FXMLLoader.load(getClass().getResource("sample.fxml"));
             } catch (IOException ioException) {

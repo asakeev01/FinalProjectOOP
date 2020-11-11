@@ -12,8 +12,12 @@ import javafx.util.Duration;
 import javafx.scene.control.*;
 import javafx.event.ActionEvent;
 
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ResourceBundle;
 
 public class logInController implements Initializable {
@@ -28,6 +32,8 @@ public class logInController implements Initializable {
 
     @FXML
     private PasswordField password;
+
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -48,6 +54,7 @@ public class logInController implements Initializable {
 
             Stage signUp = new Stage();
             Parent root = null;
+            System.out.println(username.getText());
             try {
                 root = FXMLLoader.load(getClass().getResource("sample.fxml"));
             } catch (IOException ioException) {
