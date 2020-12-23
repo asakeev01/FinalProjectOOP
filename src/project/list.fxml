@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.ListOfUsersController">
+   <children>
+      <TableView fx:id="table" layoutX="85.0" layoutY="41.0" prefHeight="292.0" prefWidth="313.0">
+        <columns>
+          <TableColumn fx:id="username" prefWidth="93.19999694824219" text="username" />
+            <TableColumn fx:id="password" prefWidth="80.39996337890625" text="password" />
+            <TableColumn fx:id="email" prefWidth="65.0" text="email" />
+            <TableColumn fx:id="location" prefWidth="72.79998779296875" text="location" />
+        </columns>
+      </TableView>
+   </children>
+</Pane>

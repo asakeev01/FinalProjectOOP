@@ -45,6 +45,6 @@
          </image>
       </ImageView>
       <Button fx:id="logIn" layoutX="464.0" layoutY="19.0" mnemonicParsing="false" onAction="#loginAction" prefHeight="42.0" prefWidth="96.0" style="-fx-background-color: #151928; -fx-border-color: #a0a2ab;" text="Log in" textFill="WHITE" />
-      <PasswordField fx:id="password" layoutX="170.0" layoutY="214.0" prefHeight="26.0" prefWidth="234.0" promptText="Password" />
+      <PasswordField fx:id="password" layoutX="169.0" layoutY="214.0" prefHeight="26.0" prefWidth="234.0" promptText="Password" />
    </children>
 </AnchorPane>

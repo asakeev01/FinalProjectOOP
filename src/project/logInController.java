@@ -43,30 +43,42 @@ public class logInController implements Initializable {
 
     @FXML
     public String loginAction(ActionEvent e) throws IOException {
-        if(username != null && password != null){
-            username.setStyle("-fx-background-color: white;");
-            password.setStyle("-fx-background-color : white;");
-        }
-        PauseTransition pt = new PauseTransition();
-        pt.setDuration(Duration.seconds(1));
-        pt.setOnFinished(end -> {
-            logIn.getScene().getWindow().hide();
-
-            Stage signUp = new Stage();
-            Parent root = null;
-            System.out.println(username.getText());
-            try {
-                root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-            } catch (IOException ioException) {
-                ioException.printStackTrace();
+        boolean isExist = false;
+        for(User user : Database.get()){
+            if(username.getText().equals(user.getUsername()) && password.getText().equals(user.getPassword())){
+                isExist = true;
             }
-            Scene scene = new Scene(root);
-            signUp.setScene(scene);
-            signUp.show();
-            System.out.println("Logged in successfully");
-        });
-        pt.play();
-        return "Logged in successfully";
+        }
+        if(isExist == true) {
+            if (username != null && password != null) {
+                username.setStyle("-fx-background-color: white;");
+                password.setStyle("-fx-background-color : white;");
+            }
+            PauseTransition pt = new PauseTransition();
+            pt.setDuration(Duration.seconds(1));
+            pt.setOnFinished(end -> {
+                logIn.getScene().getWindow().hide();
+
+                Stage signUp = new Stage();
+                Parent root = null;
+                System.out.println(username.getText());
+                try {
+                    root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+                } catch (IOException ioException) {
+                    ioException.printStackTrace();
+                }
+                Scene scene = new Scene(root);
+                signUp.setScene(scene);
+                signUp.show();
+                System.out.println("Logged in successfully");
+            });
+            pt.play();
+            return "Logged in successfully";
+        }
+        else{
+            System.out.println("There is no such user");
+            return "There is no such user";
+        }
     }
 
     @FXML

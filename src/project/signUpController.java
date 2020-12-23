@@ -14,6 +14,7 @@ import javafx.event.ActionEvent;
 
 import java.io.*;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class signUpController implements Initializable {
@@ -35,6 +36,7 @@ public class signUpController implements Initializable {
     @FXML
     private TextField location;
 
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         username.setStyle("-fx-background-color: cornflowerblue;");
@@ -44,9 +46,11 @@ public class signUpController implements Initializable {
     }
 
     @FXML
-    public String signupAction(ActionEvent e) throws IOException {
+    public String signupAction(ActionEvent e) throws IOException, SQLException {
         File list = new File("list.txt");
         FileWriter writer = new FileWriter(list, true);
+        User user = new User(username.getText(), password.getText(), mail.getText(), location.getText());
+        Database.addUser(user);
         if(username != null && password != null){
             username.setStyle("-fx-background-color: red;");
             password.setStyle("-fx-background-color : orange;");

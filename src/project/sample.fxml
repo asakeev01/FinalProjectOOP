@@ -7,7 +7,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="448.0" prefWidth="725.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="448.0" prefWidth="725.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.sampleController">
    <children>
       <Pane prefHeight="448.0" prefWidth="208.0" style="-fx-background-color: #2c3740;">
          <children>
@@ -42,7 +42,7 @@
                   <Font size="24.0" />
                </font>
             </Label>
-            <Button layoutX="52.0" layoutY="316.0" mnemonicParsing="false" style="-fx-background-color: #2c3740; -fx-font-family: cursive; -fx-font-weight: 500;" text="CONTACT US" textFill="WHITE">
+            <Button fx:id="listOfUsers" layoutX="52.0" layoutY="316.0" mnemonicParsing="false" onAction="#showAction" style="-fx-background-color: #2c3740; -fx-font-family: cursive; -fx-font-weight: 500;" text="LIST OF USERS" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>

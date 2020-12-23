@@ -4,13 +4,14 @@ import javafx.event.ActionEvent;
 import org.junit.Test;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 import static org.junit.Assert.*;
 
 public class signUpControllerTest {
 
     @Test
-    public void signupAction() throws IOException {
+    public void signupAction() throws IOException, SQLException {
         ActionEvent go = new ActionEvent();
         signUpController controller = new signUpController();
         assertEquals("Signed up successfully", controller.signupAction(go));
