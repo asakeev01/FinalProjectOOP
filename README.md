@@ -1,6 +1,6 @@
 # MidTermProjectOOP
 OOP Project
-Ayana's and Aidar's final OOP project is about my real one order from logistic company.We chose this project because we had ready design.In our project we can switch from sign up to log in and inversely also log in and sign up in order to approach main page.
+Ayana's and Aidar's final OOP project is about our real one order from logistic company.We chose this project because we had ready design.In our project we can switch from sign up to log in and inversely also log in and sign up in order to approach main page.
 ![GitHub Logo](/images/jscr1.png)
 ![GitHub Logo](/images/jscr10.png)
 ![GitHub Logo](/images/jscr3.png)
