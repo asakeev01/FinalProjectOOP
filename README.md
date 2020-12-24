@@ -20,3 +20,7 @@ Aiana's and Aidar's final OOP project is about our real one order from logistic 
 
 # Link to YouTube video:
 https://youtu.be/F1BS_xAbFHY
+
+
+# Link to the feedbacks:
+https://docs.google.com/document/d/1A7e3PfXtM47iJgCORg8h2gXyZAjWIZcfibSeXLanZCw/edit?usp=sharing
